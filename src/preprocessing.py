@@ -23,4 +23,6 @@ def load_process(file_path):
     df['day'] = df['trans_date_trans_time'].dt.day
     df['month'] = df['trans_date_trans_time'].dt.month
     df['weekday'] = df['trans_date_trans_time'].dt.weekday
+
+    df = df.drop(columns=['trans_date_trans_time'], axis=1)
     return df
