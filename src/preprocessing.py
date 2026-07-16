@@ -25,4 +25,6 @@ def load_process(file_path):
     df['weekday'] = df['trans_date_trans_time'].dt.weekday
 
     df = df.drop(columns=['trans_date_trans_time'], axis=1)
+
+    data['merchant_freq'] = data['merchant'].map(data['merchant'].value_counts(normalize=True))
     return df
