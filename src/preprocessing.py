@@ -28,4 +28,7 @@ def load_process(file_path):
 
     df['merchant_freq'] = df['merchant'].map(df['merchant'].value_counts(normalize=True))
     df = df.drop(columns=['merchant', 'city'], axis=1)
+
+    df['job_freq'] = df['job'].map(df['job'].value_counts(normalize=True))
+    df = df.drop(columns=['state', 'job'])
     return df
