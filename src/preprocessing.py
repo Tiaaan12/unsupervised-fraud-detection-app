@@ -1,17 +1,20 @@
 import pandas as pd
 import numpy as np
 
-def load_process(path: str) -> pd.DataFrame:
+def load_process(file_path):
     
-    data = pd.read_csv(path)
-    
-    cols_to_drop = {
-        "Unnamed: 0",
-        "cc_num",
-        "first",
-        "last",
-        "street",
-        "trans_num"
-    }
-    
-    data = data.drop(columns=cols_to_drop, axis=1)
+    df = pd.read_csv(file_path)
+
+    df.info()
+    cols_to_drop = [
+    "Unnamed: 0",
+    "cc_num",
+    "first",
+    "last",
+    "street",
+    "trans_num"
+]
+
+    df = df.drop(columns=cols_to_drop, axis=1)
+
+    return df
