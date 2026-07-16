@@ -26,5 +26,5 @@ def load_process(file_path):
 
     df = df.drop(columns=['trans_date_trans_time'], axis=1)
 
-    data['merchant_freq'] = data['merchant'].map(data['merchant'].value_counts(normalize=True))
+    df['merchant_freq'] = df['merchant'].map(df['merchant'].value_counts(normalize=True))
     return df
