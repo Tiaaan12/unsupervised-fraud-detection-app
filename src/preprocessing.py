@@ -17,4 +17,6 @@ def load_process(file_path):
 
     df = df.drop(columns=cols_to_drop, axis=1)
 
+    df['trans_date_trans_time'] = pd.to_datetime(df['trans_date_trans_time'])
+
     return df
