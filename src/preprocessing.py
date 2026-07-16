@@ -18,5 +18,9 @@ def load_process(file_path):
     df = df.drop(columns=cols_to_drop, axis=1)
 
     df['trans_date_trans_time'] = pd.to_datetime(df['trans_date_trans_time'])
-
+    
+    df['hour'] = df['trans_date_trans_time'].dt.hour
+    df['day'] = df['trans_date_trans_time'].dt.day
+    df['month'] = df['trans_date_trans_time'].dt.month
+    df['weekday'] = df['trans_date_trans_time'].dt.weekday
     return df
