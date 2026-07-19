@@ -33,4 +33,6 @@ def load_process(file_path):
     df = df.drop(columns=['state', 'job'])
 
     df = pd.get_dummies(df, columns=['category', 'gender'], drop_first=True)
+
+    df = df.drop(columns=['dob'], axis=1)
     return df
