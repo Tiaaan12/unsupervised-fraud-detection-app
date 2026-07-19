@@ -36,7 +36,7 @@ def load_process(file_path):
 
     df = df.drop(columns=['dob'], axis=1)
 
-    X = df.drop(columns=['is_fraud'], axis=1)
+  
 
 
     return df
