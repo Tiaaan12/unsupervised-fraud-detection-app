@@ -35,4 +35,6 @@ def load_process(file_path):
     df = pd.get_dummies(df, columns=['category', 'gender'], drop_first=True)
 
     df = df.drop(columns=['dob'], axis=1)
+
+    X = df.drop(columns=['is_fraud'], axis=1)
     return df
