@@ -31,4 +31,6 @@ def load_process(file_path):
 
     df['job_freq'] = df['job'].map(df['job'].value_counts(normalize=True))
     df = df.drop(columns=['state', 'job'])
+
+    df = pd.get_dummies(df, columns=['category', 'gender'], drop_first=True)
     return df
